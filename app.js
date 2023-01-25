@@ -8,8 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const amadeus = new Amadeus({
-	clientId: 'j4HN4piy4WRabC6Rdgg4RhBN8icoDerF',
-	clientSecret: 'aCftlcFJHU9se5Tl',
+	clientId: 'AxvnlAotYZgL1S2v00vtbfp1swSHWN1k', //'j4HN4piy4WRabC6Rdgg4RhBN8icoDerF',
+	clientSecret: '4pctArlCtWeos9Vm' //'aCftlcFJHU9se5Tl',
 });
 
 // Where we will keep books
