@@ -48,7 +48,6 @@ app.get(`/flight-search`, (req, res) => {
 		originLocationCode: req.query.originLocationCode,
 		destinationLocationCode: req.query.destinationLocationCode,
     departureDate: req.query.departureDate,
-    returnDate: req.query.returnDate,
     adults: req.query.adults,
     children: req.query.children,
     infants: req.query.infants,
@@ -59,7 +58,13 @@ app.get(`/flight-search`, (req, res) => {
     currencyCode: req.query.currencyCode,
     maxPrice: req.query.maxPrice,
     max: req.query.max,    
-	};
+  };
+  
+  if( req.query.returnDate && req.query.returnDate !== 'undefined' ) {
+    payload['returnDate'] = req.query.returnDate;
+  }
+
+  console.log('payload - ', payload);
 
 	// Find the cheapest flights
 	amadeus.shopping.flightOffersSearch.get(payload).then(function (response) {
