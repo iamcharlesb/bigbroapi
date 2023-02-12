@@ -341,8 +341,8 @@ app.post('/create-checkout-session', async (req, res) => {
         },
       ],
       mode: 'payment',
-      success_url: `${YOUR_DOMAIN}/preview?success=true`,
-      cancel_url: `${YOUR_DOMAIN}/preview?canceled=true`,
+      success_url: `${YOUR_DOMAIN}/confirmation`,
+      cancel_url: `${YOUR_DOMAIN}/final?canceled=true`,
     });
   
     res.redirect(303, session.url);
