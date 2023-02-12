@@ -4,9 +4,14 @@ import cors from 'cors';
 import Amadeus from 'amadeus';
 import Stripe from 'stripe';
 
+/** Config for Stripe */
+const YOUR_DOMAIN = 'https://master.d13qzitht9okob.amplifyapp.com';
+
+/** Config for Express */
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+/** Config for Amadeus */
 const amadeus = new Amadeus({
 	clientId: 'AxvnlAotYZgL1S2v00vtbfp1swSHWN1k', //'j4HN4piy4WRabC6Rdgg4RhBN8icoDerF',
 	clientSecret: '4pctArlCtWeos9Vm' //'aCftlcFJHU9se5Tl',
@@ -297,8 +302,6 @@ app.get(`/city-and-airport-search/:parameter`, (req, res) => {
 					res.send(response);
 			});
 });
-
-const YOUR_DOMAIN = 'http://localhost:3001';
 
 const stripe = new Stripe('sk_test_51MKzLNBe5HirBj2t288YoMXZdgqtCRYdqfTCoLvkdCIgtXKKRWG2P5TrmqxeWejkFgKs8nXD3JDecM1ooxtvMYnO00pwd2ynFS');
 
